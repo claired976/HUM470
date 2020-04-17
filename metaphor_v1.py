@@ -9,6 +9,8 @@ NUM_SYNSETS = 82191 # total number of synsets
 synset = [] # store each row of synsets
 hypernym = []
 
+# this is a change
+
 # parse the synset file 
 with open('synsets.txt') as csv_file:
     csvreader = csv.reader(csv_file, delimiter=',')
