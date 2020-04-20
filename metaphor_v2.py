@@ -56,7 +56,7 @@ firstID = randint(0, NUM_SYNSETS) # computer selects synset
 print(word_from_synset(firstID), "is", end = " ") # print first word
 
 # number of words in metaphor; PARAMETER
-numWords = 5 # human selects number of hops
+numWords = 3 # human selects number of hops
 # numWords = randint(1, 10) # computer selects number of hops, subject to human constraint
 
 
@@ -67,16 +67,16 @@ probUpwards = 0.5 # human selected
 prevID = firstID # synset ID of the previously generated word
 
 # loop numWords times, selecting a new word each time
-for i in range(numWords):
+for i in range(numWords - 1):
 
     # determine number of steps between current word and next word; PARAMETER
-    numSteps = 8 # human selects number of steps
+    numSteps = 1 # human selects number of steps
     # numSteps = randint(0, 10) # computer selects number of steps, subject to human constraint
 
     # probUpwards = random.uniform(0, 1) # computer re-selects prob. each word selection
 
     # repeat numSteps times
-    for j in range(numSteps):
+    for j in range(numSteps - 1):
 
         # PARAMETER
         # probUpwards = random.uniform(0, 1) # computer re-selects prob. each step
@@ -97,7 +97,7 @@ for i in range(numWords):
         prevID = newID # update prevID
 
     # print the next word
-    if (i < (numWords - 1)):
+    if (i < (numWords - 2)):
         print(word_from_synset(prevID), "is", end = " ") # word in middle
     else:
         print(word_from_synset(prevID)) # last word
