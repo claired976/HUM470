@@ -67,7 +67,7 @@ probUpwards = 0.5 # human selected
 prevID = firstID # synset ID of the previously generated word
 
 # loop numWords times, selecting a new word each time
-for i in range(numWords - 1):
+for i in range(numWords - 1): # -1 b/c we already set an initial word
 
     # determine number of steps between current word and next word; PARAMETER
     numSteps = 1 # human selects number of steps
@@ -76,7 +76,7 @@ for i in range(numWords - 1):
     # probUpwards = random.uniform(0, 1) # computer re-selects prob. each word selection
 
     # repeat numSteps times
-    for j in range(numSteps - 1):
+    for j in range(numSteps):
 
         # PARAMETER
         # probUpwards = random.uniform(0, 1) # computer re-selects prob. each step
