@@ -97,7 +97,8 @@ for i in range(numWords):
         prevID = newID # update prevID
 
     # print the next word
-    if (i < (numSteps - 1)):
+    if (i < (numWords - 1)):
+        print("i:", i, end=" ")
         print(word_from_synset(prevID), "is", end = " ") # word in middle
     else:
         print(word_from_synset(prevID)) # last word
