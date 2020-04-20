@@ -70,7 +70,7 @@ prevID = firstID # synset ID of the previously generated word
 for i in range(numWords):
 
     # determine number of steps between current word and next word; PARAMETER
-    numSteps = 5 # human selects number of steps
+    numSteps = 8 # human selects number of steps
     # numSteps = randint(0, 10) # computer selects number of steps, subject to human constraint
 
     # probUpwards = random.uniform(0, 1) # computer re-selects prob. each word selection
@@ -98,7 +98,6 @@ for i in range(numWords):
 
     # print the next word
     if (i < (numWords - 1)):
-        print("i:", i, end=" ")
         print(word_from_synset(prevID), "is", end = " ") # word in middle
     else:
         print(word_from_synset(prevID)) # last word
