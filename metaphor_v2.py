@@ -51,12 +51,12 @@ def find_child(synsetID):
         return(random.choice(matched_ids)) # a random child
 
 # first word; PARAMETER
-#firstID = 59450 # human selects first synset
-firstID = randint(0, NUM_SYNSETS) # computer selects synset 
+firstID = 58779 # human selects first synset
+# firstID = randint(0, NUM_SYNSETS) # computer selects synset 
 print(word_from_synset(firstID), "is", end = " ") # print first word
 
 # number of words in metaphor; PARAMETER
-numWords = 3 # human selects number of hops
+numWords = 2 # human selects number of hops
 # numWords = randint(1, 10) # computer selects number of hops, subject to human constraint
 
 
@@ -70,8 +70,8 @@ prevID = firstID # synset ID of the previously generated word
 for i in range(numWords - 1): # -1 b/c we already set an initial word
 
     # determine number of steps between current word and next word; PARAMETER
-    numSteps = 1 # human selects number of steps
-    # numSteps = randint(0, 10) # computer selects number of steps, subject to human constraint
+    # numSteps = 50 # human selects number of steps
+    numSteps = randint(10, 25) # computer selects number of steps, subject to human constraint
 
     # probUpwards = random.uniform(0, 1) # computer re-selects prob. each word selection
 
