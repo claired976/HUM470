@@ -41,7 +41,7 @@ def find_child(hypernym, synsetID):
     else:
         return (random.choice(matched_ids))  # a random child
 
-def create_metaphor(synset, hypernym, firstID, numWords, numSteps,
+def create_metaphor(idlist, synset, hypernym, firstID, numWords, numSteps,
                     probUpwards, probUpwardsVol):
 
     prevID = firstID  # synset ID of the previously generated word
@@ -76,9 +76,11 @@ def create_metaphor(synset, hypernym, firstID, numWords, numSteps,
 
         # print the next word
         if (i < (numWords - 2)):
+            idlist.append(prevID)
             print(word_from_synset(synset, prevID), "is", end=" ")  # word in
             # middle
         else:
+            idlist.append(prevID)
             print(word_from_synset(synset, prevID))  # last word
 
 if __name__ == '__main__':
@@ -99,9 +101,11 @@ if __name__ == '__main__':
         for row in csvreader:
             hypernym.append(row)
 
+    idlist = []
     # first word; PARAMETER
     firstID = 58779  # human selects first synset
     # firstID = randint(0, NUM_SYNSETS) # computer selects synset
+    idlist.append(firstID)
     print(word_from_synset(synset, firstID), "is", end=" ")  # print first word
 
     # number of words in metaphor; PARAMETER
@@ -120,5 +124,6 @@ if __name__ == '__main__':
     # index 0 corresponds to each word, index 1 corresponds to each step
     probUpwardsVol = [False, False]
 
-    create_metaphor(synset, hypernym, firstID, numWords, numSteps,
+    create_metaphor(idlist, synset, hypernym, firstID, numWords, numSteps,
                     probUpwards, probUpwardsVol)
+    print(idlist)
