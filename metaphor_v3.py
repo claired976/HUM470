@@ -103,17 +103,17 @@ if __name__ == '__main__':
 
     idlist = []
     # first word; PARAMETER
-    firstID = 58779  # human selects first synset
+    firstID = 18970  # human selects first synset
     # firstID = randint(0, NUM_SYNSETS) # computer selects synset
     idlist.append(firstID)
     print(word_from_synset(synset, firstID), "is", end=" ")  # print first word
 
     # number of words in metaphor; PARAMETER
-    numWords = 4  # human selects number of hops
+    numWords = 10  # human selects number of hops
     # numWords = randint(1, 10) # computer selected, w human constraint
 
     # determine number of steps between current word and next word; PARAMETER
-    # numSteps = 50 # human selects number of steps
+    # numSteps = 2 # human selects number of steps
     numSteps = randint(10, 25) # computer selected w human constraint
 
     # probability of choosing to move upwards at each step; PARAMETER
@@ -126,4 +126,5 @@ if __name__ == '__main__':
 
     create_metaphor(idlist, synset, hypernym, firstID, numWords, numSteps,
                     probUpwards, probUpwardsVol)
+
     print(idlist)
