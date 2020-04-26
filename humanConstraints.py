@@ -10,6 +10,11 @@ numWords = 3 # number of words in metaphor chain
 
 print("You get this many words to explain each metaphor: ", randint(0, 50))
 
-for i in range(numWords):
+for i in range(numWords - 1):
     print("You get this many words between word %i and word %i: " %(i+1, i+2),
           randint(0, 50))
+
+for i in range(numWords):
+    for j in range(numWords):
+        print("You get this many words in cell (%i, %i): " %(i+1, j+1),
+        randint(0, 20))
